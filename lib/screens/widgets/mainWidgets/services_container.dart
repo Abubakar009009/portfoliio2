@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfoliio2/screens/widgets/CustomWidgets/services.dart';
+import 'package:portfoliio2/utils/app_strings.dart';
 import 'package:portfoliio2/utils/extensions.dart';
 
 import '../../../data/data.dart';
+import '../../../models/completedata_model.dart';
 import '../project_widget.dart';
 
 class ServicesContainer extends StatelessWidget {
-  const ServicesContainer({super.key});
+  final List<Services> services;
+  const ServicesContainer({required this.services, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class ServicesContainer extends StatelessWidget {
                 height: 50,
               ),
               Text(
-                'Services',
+                AppStrings.servicesText,
                 style: GoogleFonts.robotoMono(
                     fontSize: 35,
                     color: Colors.black,
@@ -93,9 +96,9 @@ class ServicesContainer extends StatelessWidget {
                                                     : 1.1 // done
                                                 ))))))),
                   ),
-                  itemCount: servicesList.length,
+                  itemCount: services.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Services01(data: servicesList[index]);
+                    return Services01(data: services[index]);
                   },
                 ),
               ),

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfoliio2/screens/widgets/CustomWidgets/coding_images.dart';
+import 'package:portfoliio2/utils/app_images.dart';
+import 'package:portfoliio2/utils/app_strings.dart';
+
+import '../../../models/completedata_model.dart';
 
 class CodingSkillsWeb extends StatelessWidget {
-  const CodingSkillsWeb({super.key});
+  final List<CodingSkills> skill;
+  const CodingSkillsWeb({required this.skill, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +16,11 @@ class CodingSkillsWeb extends StatelessWidget {
       child: Container(
         height: 350,
         width: MediaQuery.of(context).size.width * 0.9,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
-                'https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80'), // Replace with your image path
+              AppImages.codingBackground,
+            ), // Replace with your image path
             fit: BoxFit.cover,
           ),
         ),
@@ -28,35 +34,35 @@ class CodingSkillsWeb extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 30.0),
                   child: Text(
-                    'Coding Skills',
+                    AppStrings.codingSkills,
                     style: GoogleFonts.robotoMono(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 30.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       CodingImages(
-                          image: 'assets/images/java.png',
-                          language: 'Java',
-                          percentage: '84%'),
+                          image: skill[0].imgLink,
+                          language: skill[0].name,
+                          percentage: skill[0].percentage),
                       CodingImages(
-                          image: 'assets/images/csharp.png',
-                          language: 'C# .Net',
-                          percentage: '80%'),
+                          image: skill[1].imgLink,
+                          language: skill[1].name,
+                          percentage: skill[1].percentage),
                       CodingImages(
-                          image: 'assets/images/pyhton.png',
-                          language: 'Pyhton',
-                          percentage: '75%'),
+                          image: skill[2].imgLink,
+                          language: skill[2].name,
+                          percentage: skill[2].percentage),
                       CodingImages(
-                          image: 'assets/images/dart02.png',
-                          language: 'Dart',
-                          percentage: '90%'),
+                          image: skill[3].imgLink,
+                          language: skill[3].name,
+                          percentage: skill[3].percentage),
                     ],
                   ),
                 )

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfoliio2/utils/app_images.dart';
+import 'package:portfoliio2/utils/app_strings.dart';
 import 'package:portfoliio2/utils/extensions.dart';
 
 import '../CustomWidgets/getintouch_message.dart';
@@ -11,12 +13,12 @@ class ContactContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 650,
+      height: 660,
       width: MediaQuery.of(context).size.width,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-              'assets/images/backmail.jpg'), // Replace with your image path
+              AppImages.mailBackground), // Replace with your image path
           fit: BoxFit.cover, // Adjust the fit as needed
         ),
       ),
@@ -32,7 +34,7 @@ class ContactContainer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Get in Touch',
+                  AppStrings.getInTouch,
                   style: GoogleFonts.robotoMono(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -42,7 +44,7 @@ class ContactContainer extends StatelessWidget {
                   height: 50,
                 ),
                 Text(
-                  'For all the queries about me and my work just get in touch with me through a message',
+                  AppStrings.getInTouchdescription,
                   style: GoogleFonts.robotoMono(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -112,7 +114,7 @@ class ContactContainer extends StatelessWidget {
                             padding:
                                 MaterialStateProperty.all(EdgeInsets.all(0)),
                             fixedSize: MaterialStateProperty.all(Size(
-                                context.screenConstraint().width * 0.15, 40)),
+                                context.screenConstraint().width * 0.15, 30)),
                           ),
                           child: Center(
                             // Center the text within the button

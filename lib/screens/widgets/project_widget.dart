@@ -4,10 +4,10 @@ import 'package:portfoliio2/screens/widgets/CustomWidgets/custom_buttom.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../constants/media_query.dart';
-import '../../models/project_model.dart';
+import '../../models/completedata_model.dart';
 
 class ProjectWidget extends StatefulWidget {
-  final Project projectData;
+  final Projects projectData;
   const ProjectWidget({super.key, required this.projectData});
 
   @override
@@ -83,7 +83,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                           height: 5,
                         ),
                         Text(
-                          widget.projectData.name,
+                          widget.projectData.projectName,
                           style: GoogleFonts.robotoMono(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -161,8 +161,8 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                                     fontColor: Colors.white,
                                     fontSize: 14,
                                     onTab: () async {
-                                      final Uri url =
-                                          Uri.parse(widget.projectData.link);
+                                      final Uri url = Uri.parse(
+                                          widget.projectData.githubLink);
                                       await launchUrl(url);
                                     },
                                     radius: 10,

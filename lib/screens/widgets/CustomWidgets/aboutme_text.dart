@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfoliio2/utils/app_strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../data/data.dart';
 
 class AboutmeText extends StatefulWidget {
-  const AboutmeText({super.key});
+  final String Text1;
+  const AboutmeText({required this.Text1, super.key});
 
   @override
   State<AboutmeText> createState() => _AboutmeTextState();
@@ -26,7 +28,7 @@ class _AboutmeTextState extends State<AboutmeText> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'About Abubakar ',
+              AppStrings.aboutName,
               style: GoogleFonts.robotoMono(
                   fontSize: 30,
                   color: Colors.black,
@@ -36,14 +38,14 @@ class _AboutmeTextState extends State<AboutmeText> {
               height: 30,
             ),
             Text(
-              'My name is Abubakar, and I\'m a passionate app developer specializing in Flutter. With a knack for crafting innovative and user-friendly applications, I thrive in dynamic and evolving environments. My expertise lies in turning ideas into digital realities, harnessing the power of code to create intuitive and impactful solutions. Beyond development, I also excel as a skilled public speaker, effectively conveying ideas and concepts. My journey as an app developer has been fueled by a commitment to excellence and a love for pushing boundaries.',
+              widget.Text1,
               style: GoogleFonts.robotoMono(
                   fontSize: 14,
                   color: Colors.grey,
                   fontWeight: FontWeight.w400),
             ),
-            SizedBox(
-              height: 30,
+            Expanded(
+              child: SizedBox(),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -65,7 +67,7 @@ class _AboutmeTextState extends State<AboutmeText> {
                 fixedSize: MaterialStateProperty.all(Size(200, 50)),
               ),
               child: Text(
-                "Download CV",
+                AppStrings.downloadCV,
                 style: GoogleFonts.robotoMono(
                   fontSize: 15,
                   color: Colors.black,

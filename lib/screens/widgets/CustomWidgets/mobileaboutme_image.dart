@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfoliio2/utils/app_images.dart';
 
 class MobileAboutMeImage extends StatefulWidget {
   const MobileAboutMeImage({super.key});
@@ -36,7 +37,7 @@ class _MobileAboutMeImageState extends State<MobileAboutMeImage> {
                   height: 390,
                   width: MediaQuery.of(context).size.width - 100,
                   child: Image.asset(
-                    'assets/images/myprofile01.jpg',
+                    AppImages.aboutmeImage,
                     fit: BoxFit.cover,
                   ),
                 ),

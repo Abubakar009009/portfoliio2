@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfoliio2/utils/app_strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../data/data.dart';
 
 class MobileAboutMeText extends StatefulWidget {
-  const MobileAboutMeText({super.key});
+  final String text;
+  const MobileAboutMeText({required this.text, super.key});
 
   @override
   State<MobileAboutMeText> createState() => _MobileAboutMeTextState();
@@ -26,7 +28,7 @@ class _MobileAboutMeTextState extends State<MobileAboutMeText> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'About Abubakar ',
+              AppStrings.aboutName,
               style: GoogleFonts.robotoMono(
                   fontSize: 30,
                   color: Colors.black,
@@ -36,7 +38,7 @@ class _MobileAboutMeTextState extends State<MobileAboutMeText> {
               height: 30,
             ),
             Text(
-              'My name is Abubakar, and I\'m a passionate app developer specializing in Flutter. With a knack for crafting innovative and user-friendly applications, I thrive in dynamic and evolving environments. My expertise lies in turning ideas into digital realities, harnessing the power of code to create intuitive and impactful solutions. Beyond development, I also excel as a skilled public speaker, effectively conveying ideas and concepts. My journey as an app developer has been fueled by a commitment to excellence and a love for pushing boundaries.',
+              widget.text,
               style: GoogleFonts.robotoMono(
                   fontSize: 14,
                   color: Colors.grey,
@@ -65,7 +67,7 @@ class _MobileAboutMeTextState extends State<MobileAboutMeText> {
                 fixedSize: MaterialStateProperty.all(Size(200, 50)),
               ),
               child: Text(
-                "Download CV",
+                AppStrings.downloadCV,
                 style: GoogleFonts.robotoMono(
                   fontSize: 15,
                   color: Colors.black,

@@ -1,10 +1,13 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfoliio2/utils/app_images.dart';
+import 'package:portfoliio2/utils/app_strings.dart';
 import 'package:portfoliio2/utils/extensions.dart';
 
 class MainImage extends StatefulWidget {
-  const MainImage({super.key});
+  final String Aboutme;
+  const MainImage({required this.Aboutme, super.key});
 
   @override
   State<MainImage> createState() => _MainImageState();
@@ -16,10 +19,10 @@ class _MainImageState extends State<MainImage> {
     return Container(
       height: 550,
       width: MediaQuery.of(context).size.width,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-              'assets/images/mansitting.jpg'), // Replace with your image path
+              AppImages.mainBackground), // Replace with your image path
           fit: BoxFit.cover,
         ),
       ),
@@ -32,7 +35,7 @@ class _MainImageState extends State<MainImage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Hi  I\'M ABUBAKAR',
+              AppStrings.iam,
               style: GoogleFonts.robotoMono(
                   fontSize: 30,
                   color: Colors.white,
@@ -47,7 +50,7 @@ class _MainImageState extends State<MainImage> {
                       ? context.screenConstraint().width * 0.2
                       : context.screenConstraint().width * 0.1),
               child: Text(
-                'Exploring the digital realm, crafting innovative app solutions that transcend expectations. With a passion for coding and an eye for design, I bring ideas to life',
+                widget.Aboutme,
                 style: GoogleFonts.robotoMono(
                   fontSize: 14,
                   color: Colors.white,
@@ -88,7 +91,7 @@ class _MainImageState extends State<MainImage> {
                               speed: Duration(milliseconds: 200)),
                         ],
                         onTap: () {
-                          print("Tap Event");
+                          //   print("Tap Event");
                         },
                       ),
                     ),

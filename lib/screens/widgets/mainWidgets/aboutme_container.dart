@@ -11,7 +11,8 @@ import '../CustomWidgets/aboutme_text.dart';
 import '../CustomWidgets/mobileaboutme_text.dart';
 
 class AboutMe extends StatelessWidget {
-  const AboutMe({super.key});
+  final String aboutmeText;
+  const AboutMe({required this.aboutmeText, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +21,12 @@ class AboutMe extends StatelessWidget {
         height: 500,
         width: MediaQuery.of(context).size.width,
         color: Colors.grey.withOpacity(0),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AboutmeText(),
-            AboutmeImage(),
+            AboutmeText(Text1: aboutmeText),
+            const AboutmeImage(),
           ],
         ),
       );
@@ -34,11 +35,11 @@ class AboutMe extends StatelessWidget {
         height: 1000,
         width: MediaQuery.of(context).size.width,
         color: Colors.grey.withOpacity(0),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            MobileAboutMeText(),
+            MobileAboutMeText(text: aboutmeText),
             MobileAboutMeImage(),
           ],
         ),

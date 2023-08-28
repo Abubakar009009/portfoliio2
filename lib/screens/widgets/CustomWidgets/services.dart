@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../models/services_model.dart';
+import '../../../models/completedata_model.dart';
 
 class Services01 extends StatefulWidget {
   final Services data;
@@ -33,7 +33,7 @@ class _Services01State extends State<Services01> {
                   width: 70,
                   //color: Colors.pink,
                   child: Image.asset(
-                    widget.data.imageLink,
+                    widget.data.imgLink,
                     fit: BoxFit.cover,
                   ),
                 ),

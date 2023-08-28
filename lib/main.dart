@@ -1,15 +1,28 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:portfoliio2/firebase_options.dart';
 import 'package:portfoliio2/screens/home_screen.dart';
 import 'package:portfoliio2/extras/project_widget_provider.dart';
+import 'package:portfoliio2/utils/send_get_data.dart';
 import 'package:provider/provider.dart';
 import 'package:device_preview/device_preview.dart'; // Import the package
 
 import 'constants/constants.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding
+      .ensureInitialized(); // Ensure that Flutter is initialized
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  ); // Initialize Firebase
+
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ProjectWidgetProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => SetGetData()),
+        ChangeNotifierProvider(create: (context) => ProjectWidgetProvider()),
+        // Add more providers here
+      ],
       child: MyApp(),
     ),
   );

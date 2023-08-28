@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfoliio2/utils/app_images.dart';
+import 'package:portfoliio2/utils/app_strings.dart';
 import 'package:portfoliio2/utils/extensions.dart';
 
 import '../CustomWidgets/getintouch_message.dart';
@@ -13,10 +15,10 @@ class ContactContainerMobile extends StatelessWidget {
     return Container(
       height: 1000,
       width: MediaQuery.of(context).size.width,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-              'assets/images/backmail.jpg'), // Replace with your image path
+              AppImages.mailBackground), // Replace with your image path
           fit: BoxFit.cover, // Adjust the fit as needed
         ),
       ),
@@ -32,7 +34,7 @@ class ContactContainerMobile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Get in Touch',
+                  AppStrings.getInTouch,
                   style: GoogleFonts.robotoMono(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -42,7 +44,7 @@ class ContactContainerMobile extends StatelessWidget {
                   height: 50,
                 ),
                 Text(
-                  'For all the queries about me and my work just get in touch with me through a message',
+                  AppStrings.getInTouchdescription,
                   style: GoogleFonts.robotoMono(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
